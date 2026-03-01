@@ -7,7 +7,7 @@ SRC = main.c \
       RoomsPart1/room2.c \
       RoomsPart1/room3.c \
 
-OBJ = $(SRC:.c=.o) bat.o
+OBJ = $(SRC:.c=.o) bat.o player.o
 
 all: $(TARGET)
 
@@ -18,6 +18,9 @@ $(TARGET): $(OBJ)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 bat.o: enemy\ logic/bat.c
+	$(CC) $(CFLAGS) -c "$<" -o "$@"
+
+player.o: player\ logic/player.c
 	$(CC) $(CFLAGS) -c "$<" -o "$@"
 
 clean:

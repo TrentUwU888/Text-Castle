@@ -4,10 +4,12 @@
 typedef struct {
     int health;
     int attack;
+    int has_rusty_sword;
 } Player;
 
 int player_attacks(Player* player);
 void player_dies(Player* player);
 void player_stats(Player* player);
+void inventory(Player* player);
 
 #endif 
