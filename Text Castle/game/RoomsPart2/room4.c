@@ -1,7 +1,15 @@
 #include "room4.h"
 #include "lobby2.h"
+#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
+
+static void to_lower_str(char *s) {
+    while (*s != '\0') {
+        *s = (char)tolower((unsigned char)*s);
+        s++;
+    }
+}
 
 void room4(Player* player) {
     if (player == NULL) {
@@ -22,11 +30,12 @@ void room4(Player* player) {
         if (scanf("%7s", choice) != 1) {
             return;
         }
+        to_lower_str(choice);
 
         if (strcmp(choice, "yes") == 0) {
             player->has_magic_staff = 1;
             player->magic_attack = 12;
-            printf("You obtained the Magic Staff! Magic attack unlocked.\n");
+            printf("You obtained the Magic Staff! Magic unlocked.\n");
             lobby2(player);
             return;
         }

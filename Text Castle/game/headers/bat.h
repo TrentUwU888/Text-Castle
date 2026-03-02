@@ -11,7 +11,7 @@ typedef struct {
 int bat_attacks(Bat* bat);
 void bat_dies(Bat* bat);
 void bat_stats(Bat* bat);
-void battle(Bat* bat, Player* player);
+void bat_battle(Bat* bat, Player* player);
 
 
 #endif 

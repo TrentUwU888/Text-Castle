@@ -1,6 +1,7 @@
 #include "lobby2.h"
 #include "room4.h"
 #include "room5.h"
+#include "room6.h"
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
@@ -28,7 +29,8 @@ void lobby2(Player* player) {
             room5(player);
             return;
         } else if (strcmp(choice, "room6") == 0 || strcmp(choice, "6") == 0) {
-            printf("Room 6 is still under construction.\n");
+            room6(player);
+            return;
         } else {
             printf("Unknown room: %s\n", choice);
         }

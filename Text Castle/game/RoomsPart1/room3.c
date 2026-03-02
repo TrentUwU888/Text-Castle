@@ -1,7 +1,7 @@
 #include "room3.h"
 #include "lobby.h"
 #include "lobby2.h"
-#include "bat.h"
+#include "goblin.h"
 #include "player.h"
 #include <stdio.h>
 #include <string.h>
@@ -17,19 +17,19 @@ void room3(Player* player) {
     }
 
     while (1) {
-        printf("A bat tries to attack you!\n");
+        printf("A goblin tries to attack you!\n");
         printf("Attack or Flee? (attack/flee)\n");
         char choice[7];
         if (scanf("%6s", choice) != 1) {
             return;
         }
         if (strcmp(choice, "attack") == 0) {
-            Bat bat = {30, 5};
-            battle(&bat, player);
+            Goblin goblin = {40, 5};
+            battle(&goblin, player);
             lobby2(player);
             return;
         } else if (strcmp(choice, "flee") == 0) {
-            printf("You fled from the bats.\n");
+            printf("You fled from the goblin.\n");
             lobby2(player);
             return;
         } else {
