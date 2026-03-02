@@ -1,6 +1,8 @@
 #ifndef ROOM4_H
 #define ROOM4_H
 
-void room4();
+#include "player.h"
+
+void room4(Player* player);
 
 #endif 

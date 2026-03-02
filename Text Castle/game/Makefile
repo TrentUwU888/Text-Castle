@@ -6,6 +6,9 @@ SRC = main.c \
       RoomsPart1/room1.c \
       RoomsPart1/room2.c \
       RoomsPart1/room3.c \
+      RoomsPart2/lobby2.c \
+      RoomsPart2/room4.c \
+      RoomsPart2/room5.c \
 
 OBJ = $(SRC:.c=.o) bat.o player.o
 

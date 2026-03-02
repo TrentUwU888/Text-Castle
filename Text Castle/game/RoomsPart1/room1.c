@@ -4,41 +4,30 @@
 #include "lobby.h"
 
 void room1(Player* player) {
-    printf("\n=== ROOM 1 ===\n");
-    printf("You enter room 1 and see a chest.\n");
-    printf("Do you open it? (yes/no)\n");
-    printf("> ");
+    while (1) {
+        printf("\n=== ROOM 1 ===\n");
+        printf("You enter room 1 and see a chest.\n");
+        printf("Do you open it? (yes/no)\n");
+        printf("> ");
 
-    /* Clear leftover input from previous scanf/fgets */
-    int c;
-    while ((c = getchar()) != '\n' && c != EOF);
-
-    char choice[64];
-
-    if (fgets(choice, sizeof(choice), stdin) == NULL) {
-        return;
-    }
-
-    for (int i = 0; choice[i] != '\0'; i++) {
-        if (choice[i] == '\r' || choice[i] == '\n') {
-            choice[i] = '\0';
+        char choice[8];
+        if (scanf("%7s", choice) != 1) {
+            return;
         }
-        if (choice[i] >= 'A' && choice[i] <= 'Z') {
-            choice[i] += 32;
+
+        printf("\n");
+
+        if (strcmp(choice, "yes") == 0) {
+            printf("Nahhhhhhhhhhhhhhhh you get eaten XD\n");
+            printf("You died from a MAN EATING CHEST...\n\n");
+            player_dies(player);
+            return;
+        } else if (strcmp(choice, "no") == 0) {
+            printf("You decide to leave the chest alone and exit the room.\n\n");
+            lobby(player);
+            return;
+        } else {
+            printf("I don't understand that choice.\n");
         }
-    }
-
-    printf("\n");
-
-    if (strcmp(choice, "yes") == 0) {
-        printf("Nahhhhhhhhhhhhhhhh you get eaten XD\n");
-        printf("You died from a MAN EATING CHEST...\n\n");
-    }
-    else if (strcmp(choice, "no") == 0) {
-        printf("You decide to leave the chest alone and exit the room.\n\n");
-        lobby(player);
-    }
-    else {
-        printf("I don't understand that choice.\n");
     }
 }
