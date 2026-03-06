@@ -10,8 +10,9 @@ SRC = main.c \
       RoomsPart2/room4.c \
       RoomsPart2/room5.c \
       RoomsPart2/room6.c \
+      RoomsPart2/room7.c \
 
-OBJ = $(SRC:.c=.o) bat.o goblin.o player.o
+OBJ = $(SRC:.c=.o) bat.o goblin.o beta_boss.o player.o
 
 all: $(TARGET)
 
@@ -25,6 +26,9 @@ bat.o: enemy\ logic/bat.c
 	$(CC) $(CFLAGS) -c "$<" -o "$@"
 
 goblin.o: enemy\ logic/goblin.c
+	$(CC) $(CFLAGS) -c "$<" -o "$@"
+
+beta_boss.o: boss\ logic/Mini_Boss.c
 	$(CC) $(CFLAGS) -c "$<" -o "$@"
 
 player.o: player\ logic/player.c

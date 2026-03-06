@@ -1,5 +1,4 @@
 #include "room4.h"
-#include "lobby2.h"
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
@@ -20,7 +19,6 @@ void room4(Player* player) {
 
     if (player->has_magic_staff) {
         printf("The chest is empty. You already took the Magic Staff.\n");
-        lobby2(player);
         return;
     }
 
@@ -36,13 +34,11 @@ void room4(Player* player) {
             player->has_magic_staff = 1;
             player->magic_attack = 12;
             printf("You obtained the Magic Staff! Magic unlocked.\n");
-            lobby2(player);
             return;
         }
 
         if (strcmp(choice, "no") == 0) {
             printf("You leave the chest alone.\n");
-            lobby2(player);
             return;
         }
 

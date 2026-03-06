@@ -1,7 +1,6 @@
 #include "room6.h"
 #include "bat.h"
 #include "goblin.h"
-#include "lobby2.h"
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
@@ -46,7 +45,6 @@ void room6(Player* player) {
             }
             if (bat1.health > 0) {
                 printf("You escaped Room 6.\n");
-                lobby2(player);
                 return;
             }
 
@@ -58,7 +56,6 @@ void room6(Player* player) {
             }
             if (bat2.health > 0) {
                 printf("You escaped Room 6.\n");
-                lobby2(player);
                 return;
             }
 
@@ -70,17 +67,14 @@ void room6(Player* player) {
             }
             if (captain.health <= 0) {
                 printf("You cleared Room 6.\n");
-                lobby2(player);
             } else if (player->health > 0) {
                 printf("You escaped Room 6.\n");
-                lobby2(player);
             }
             return;
         }
 
         if (strcmp(choice, "flee") == 0) {
             printf("You fled back to the lobby.\n");
-            lobby2(player);
             return;
         }
 
